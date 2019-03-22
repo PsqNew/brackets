@@ -10,11 +10,11 @@ module.exports = function check(str, bracketsConfig) {
             if (checkBracket[0] === mainBracket && checkBracket[0] !== checkBracket[1]) {
                 breckets_main.push(i);
             }
-            else if (checkBracket[0] === mainBracket && checkBracket[0] === checkBracket[1]) {
-                breckets_main.push(i);
-            }
             else if (checkBracket[1] === mainBracket && breckets_main[breckets_main.length-1] === i) {
                 breckets_main.pop();
+            }
+            else if (checkBracket[0] === mainBracket && checkBracket[0] === checkBracket[1]) {
+                breckets_main.push(i);
             }
         });
     });
